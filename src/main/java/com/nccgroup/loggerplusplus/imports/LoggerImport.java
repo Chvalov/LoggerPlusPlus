@@ -107,7 +107,7 @@ public class LoggerImport {
                     decodedRequest = b64Decoder.decode(v[0]);
                     decodedResponse = b64Decoder.decode(v[1]);
                 } catch (IllegalArgumentException e) {
-                    // If decoding with URL-safe Base64 fails, try standard Base64 decoding
+                    // If decoding with standard Base64 fails, try URL-safe Base64 decoding
                     log.warn("Standard Base64 decoding failed, trying URL-safe Base64 decoding");
                     decodedRequest = b64Decoder.decode(v[0], Base64DecodingOptions.URL);
                     decodedResponse = b64Decoder.decode(v[1], Base64DecodingOptions.URL);
